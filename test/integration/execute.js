@@ -62,6 +62,7 @@ fs.readdirSync(executeDir)
     .filter(uri => uri.endsWith('.sb2'))
     .forEach(uri => {
         test(uri, t => {
+
             // Disable logging during this test.
             log.suggest.deny('vm', 'error');
             t.tearDown(() => log.suggest.clear());
